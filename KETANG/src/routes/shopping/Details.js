@@ -79,13 +79,13 @@ class Details extends Component{
             let result=await addShopCart(this.courseId);
             if(parseFloat(result.code)===0){
                 this.props.queryUnpay();
-                console.log(this.props.shopCart);
                 this.setState({isShop:0});
             }
             return
         }
-        console.log(this.props.shopCart.unpay);
-        /*console.log(parseFloat(this.props.courseData.pcs)+1);
+        console.log(this.props.courseData.pcs+1);
+        /*console.log(parseFlo
+       at(this.props.courseData.pcs)+1);
         this.props.courseData.pcs=this.props.courseData.pcs+1;*/
         //this.setState({isShop:-1})
     }

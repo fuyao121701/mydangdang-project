@@ -22,7 +22,7 @@ export default function list(state = INIT_STATE, action) {
             if (parseFloat(result.code) === 0) {
                 state.courseData.total = parseFloat(result.total);
                 state.courseData.limit = parseFloat(result.limit);
-                state.courseData.pcs = parseFloat(result.pcs);//商品个数
+                //state.courseData.pcs = parseFloat(result.pcs);//商品个数
                 state.courseData.page = parseFloat(result.page);
                 state.courseData.data = state.courseData.data.concat(result.data);
             }

@@ -47,7 +47,8 @@ class Shopping extends Component {
                                     return <li className='shop_li' key={index}>
                                         <Checkbox></Checkbox>
                                         <Link to={{
-                                            pathname: `/shopping/details?courseId=${id}`
+                                            pathname: `/shopping/details`,
+                                            search: `?courseId=${id}`
                                         }}>
                                             <img src={pic} alt=""
                                                  style={{display: 'inline-block',width:'2rem',height:'2rem'}}
@@ -56,7 +57,8 @@ class Shopping extends Component {
                                         {
                                             !this.state.compile?(<div className='shop_price'>
                                                     <Link to={{
-                                                        pathname: `/shopping/details?courseId=${id}`
+                                                        pathname: `/shopping/details`,
+                                                        search: `?courseId=${id}`
                                                     }}>
                                                         <p>{name}</p>
                                                     </Link>
