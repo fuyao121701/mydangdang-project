@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux'
 import NavTop from '../../component/NavTop'
-import {Checkbox, Icon,InputNumber,BackTop} from 'antd'
+import {Checkbox, Icon,InputNumber,BackTop,Radio} from 'antd'
 import action from '../../store/action'
 import List from '../../component/List'
 
@@ -21,7 +21,6 @@ class Shopping extends Component {
         this.setState({compile:true})
     };
     render(){
-        let pcs=parseFloat(this.props.courseData.pcs);
         return (
             <div>
                 <NavTop title={this.state.title}/>
@@ -31,7 +30,7 @@ class Shopping extends Component {
                         <div className='shop_main'>
                             <div className='shop_title'>
                                 <div className='shop_input'>
-                                    <Checkbox ></Checkbox>
+                                    <Checkbox checked={this.props.selectAll} onChange={this.props.handleSelect.bind(this,'all')}></Checkbox>
                                     <div className='shopIcon'>
                                         <em></em>
                                         <span>当当网</span></div>
@@ -43,11 +42,12 @@ class Shopping extends Component {
                             </div>
                             <ul className='shop_ul'>
                                 {this.props.shopCart.unpay.map((item,index)=>{
-                                    let {pic,name,price,pricing,id}=item;
+                                    let {pic,name,price,pricing,id,pcs,check}=item;
                                     return <li className='shop_li' key={index}>
-                                        <Checkbox></Checkbox>
+                                        <Checkbox onChange={this.props.handleSelect.bind(this,id)} checked={check}></Checkbox>
                                         <Link to={{
-                                            pathname: `/shopping/details?courseId=${id}`
+                                            pathname: `/shopping/details`,
+                                            search: `?courseId=${id}`
                                         }}>
                                             <img src={pic} alt=""
                                                  style={{display: 'inline-block',width:'2rem',height:'2rem'}}
@@ -56,7 +56,8 @@ class Shopping extends Component {
                                         {
                                             !this.state.compile?(<div className='shop_price'>
                                                     <Link to={{
-                                                        pathname: `/shopping/details?courseId=${id}`
+                                                        pathname: `/shopping/details`,
+                                                        search: `?courseId=${id}`
                                                     }}>
                                                         <p>{name}</p>
                                                     </Link>

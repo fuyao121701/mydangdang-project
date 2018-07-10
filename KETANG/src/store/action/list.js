@@ -29,6 +29,11 @@ let list={
             });
         }
     },
-
+    handleSelect(mode){
+        return{
+            type:TYPES.COURSE_HANDLE,
+            mode
+        }
+    }
 };
 export default list;
