@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 import { Icon, Input, Carousel, BackTop } from 'antd';
 import '../static/css/home.less'
 import action from '../store/action/index'
@@ -29,7 +30,7 @@ class Home extends Component {
             queryBanner3();
         }
 
-    
+
     }
 
     render() {
@@ -49,7 +50,7 @@ class Home extends Component {
             </header>
 
             <main className='allBox'>
-            <BackTop/>
+                <BackTop/>
                 <Carousel autoplay autoplaySpeed={2000}>
                     <div><img src="http://img63.ddimg.cn/ddreader/dangebook/6y20y6z1242-366.jpg" alt="" /></div>
                     <div><img src="http://img63.ddimg.cn/upload_img/00702/B/1242x366_dl_20180629-1530512215.jpg" alt="" /></div>
@@ -59,11 +60,11 @@ class Home extends Component {
 
                 <div className="ify">
                     <ul>
-                        <li><a href="javascript:;"><img src="http://img62.ddimg.cn/upload_img/00528/0000/1-00-1528978871.png" alt="" /></a></li>
-                        <li><a href="javascript:;"><img src="http://img62.ddimg.cn/upload_img/00528/0000/2-00-1528978871.png" alt="" /></a></li>
-                        <li><a href="javascript:;"><img src="http://img60.ddimg.cn/upload_img/00528/0000/3-00-1528978871.png" alt="" /></a></li>
-                        <li><a href="javascript:;"><img src="http://img60.ddimg.cn/upload_img/00528/0000/4-00-1528978871.png" alt="" /></a></li>
-                        <li><a href="javascript:;"><img src="http://img62.ddimg.cn/upload_img/00528/0000/000-1530273800.png" alt="" /></a></li>
+                        <li><Link to='/classify'><img src="http://img62.ddimg.cn/upload_img/00528/0000/1-00-1528978871.png" alt="" /></Link></li>
+                        <li><Link to='/classify'><img src="http://img62.ddimg.cn/upload_img/00528/0000/2-00-1528978871.png" alt="" /></Link></li>
+                        <li><Link to='/classify'><img src="http://img60.ddimg.cn/upload_img/00528/0000/3-00-1528978871.png" alt="" /></Link></li>
+                        <li><Link to='/mydangdang'><img src="http://img60.ddimg.cn/upload_img/00528/0000/4-00-1528978871.png" alt="" /></Link></li>
+                        <li><Link to='/classify'><img src="http://img62.ddimg.cn/upload_img/00528/0000/000-1530273800.png" alt="" /></Link></li>
                     </ul>
                 </div>
                 <div className='journalism'>
@@ -82,7 +83,7 @@ class Home extends Component {
 
 
                     <a href="javascript:;" className="ddkx_more">更多</a>
-                   
+
                 </div>
 
 
@@ -110,7 +111,7 @@ class Home extends Component {
                             </Carousel>) : ''}
                         </ul>
                     </div>
-                    
+
                 </div>
 
 

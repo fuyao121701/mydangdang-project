@@ -21,7 +21,6 @@ route.post('/login', (req, res) => {
     let {name, password} = req.body || {};
     //=>把秘密二次加密：因为注册的时候，存储到JSON中的密码是经过二次加密的，所以我们登录验证的时候也需要把密码二次加密，只有这样才会和JSON中的匹配
     password = password.substr(4, 24).split('').reverse().join('');
-
     //=>req.personalDATA 之前读取的PERSONAL中的信息：登录校验就是把用户传递的信息到总数据中查找，找到就代表登录成功...
     const item = req.personalDATA.find(item => {
         //=>支持用户名传递：姓名、邮箱、电话
@@ -75,6 +74,7 @@ route.post('/register', (req, res) => {
     }).catch(() => {
         res.send({code: 1, msg: 'NO!'});
     });
+
 });
 
 route.get('/info', (req, res) => {

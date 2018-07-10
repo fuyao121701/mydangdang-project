@@ -83,10 +83,6 @@ class Details extends Component{
             }
             return
         }
-        console.log(this.props.courseData.pcs+1);
-        /*console.log(parseFlo
-       at(this.props.courseData.pcs)+1);
-        this.props.courseData.pcs=this.props.courseData.pcs+1;*/
         //this.setState({isShop:-1})
     }
 }

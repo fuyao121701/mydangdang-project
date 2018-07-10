@@ -9,6 +9,7 @@ route.get('/banner', (req, res) => {
         msg: 'OK!',
         data
     });
+
 });
 route.get('/banner1', (req, res) => {
     //=>我就是把所有课程中的最后三条数据做为轮播图展示
@@ -34,12 +35,20 @@ route.get('/banner3', (req, res) => {
         data: req.banner3DATA
     });
 });
+route.get('/swiper', (req, res) => {
+    //=>我就是把所有课程中的最后三条数据做为轮播图展示
+    res.send({
+        code: 0,
+        msg: 'OK!',
+        data: req.banner3DATA
+    });
+});
 route.get('/listname', (req, res) => {
     //=>我就是把所有课程中的最后三条数据做为轮播图展示
     res.send({
         code: 0,
         msg: 'OK!',
-        data: req.listnameDATA
+        data: req.swiperDATA
     });
 });
 route.get('/info', (req, res) => {

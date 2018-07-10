@@ -4,6 +4,7 @@ const CONFIG = require('./config'),
     BANNER1_PATH = './json/banner1.json',
     BANNER2_PATH = './json/banner2.json',
     BANNER3_PATH = './json/banner3.json',
+    SWIPER_PATH = './json/swiper.json',
     LISTNAME_PATH = './json/listname.json',
     STORE_PATH = './json/store.json';
 
@@ -42,6 +43,7 @@ app.use(async (req, res, next) => {
     req.banner1DATA = JSON.parse(await readFile(BANNER1_PATH));
     req.banner2DATA = JSON.parse(await readFile(BANNER2_PATH));
     req.banner3DATA = JSON.parse(await readFile(BANNER3_PATH));
+    req.swiperDATA = JSON.parse(await readFile(SWIPER_PATH));
     req.listnameDATA = JSON.parse(await readFile(LISTNAME_PATH ));
     req.storeDATA = JSON.parse(await readFile(STORE_PATH));
     next();
