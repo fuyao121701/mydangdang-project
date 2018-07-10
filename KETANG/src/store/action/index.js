@@ -1,5 +1,7 @@
 import list from './list';
+
 import person from "./personal";
+
 import Home from './Home';
 
 import Classify from './Classify'

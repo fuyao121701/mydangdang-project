@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c6479ee3-f8f6-4f20-a09d-c390e227f93b" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KETANG/src/store/index.js" />
     </list>
+=======
+    <list default="true" id="540f406b-fc5b-4111-8b19-d1dbf2471a07" name="Default" comment="" />
+>>>>>>> c1d1a1bc47e501fd56ba61dcc86c205fc9a72f46
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />

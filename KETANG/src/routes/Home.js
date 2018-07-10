@@ -30,7 +30,7 @@ class Home extends Component {
             queryBanner3();
         }
 
-    
+
     }
 
     render() {
@@ -50,7 +50,7 @@ class Home extends Component {
             </header>
 
             <main className='allBox'>
-            <BackTop/>
+                <BackTop/>
                 <Carousel autoplay autoplaySpeed={2000}>
                     <div><img src="http://img63.ddimg.cn/ddreader/dangebook/6y20y6z1242-366.jpg" alt="" /></div>
                     <div><img src="http://img63.ddimg.cn/upload_img/00702/B/1242x366_dl_20180629-1530512215.jpg" alt="" /></div>
@@ -83,7 +83,7 @@ class Home extends Component {
 
 
                     <a href="javascript:;" className="ddkx_more">更多</a>
-                   
+
                 </div>
 
 
@@ -111,7 +111,7 @@ class Home extends Component {
                             </Carousel>) : ''}
                         </ul>
                     </div>
-                    
+
                 </div>
 
 
