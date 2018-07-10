@@ -1,0 +1,110 @@
+.ant-tabs-content{
+  background: #eff4fa;
+  height:100%;
+  padding-left:10px !important;
+  overflow-y:auto !important;
+}
+.headerNavBox {
+  @BG: #2A2A2A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  background: #fff;
+  border-bottom:1px solid #ccc;
+  .classWrapper{
+    height:100%;
+    display:flex;
+    align-items: center;
+    .icon{
+      color:#666;
+      flex:0 0 40px;
+    }
+    div{
+      flex:1
+    }
+  }
+}
+.allBox.mainContent{
+  width: 100%;
+  position:fixed;
+  .ant-tabs-nav-wrap{
+    width:80px;
+  }
+  .ant-carousel{
+    .slick-slide{
+      margin-top:0;
+    }
+  }
+}
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar{
+  background:#fff;
+}
+// tabCarder
+.tabCarder{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  margin-top:10px;
+  & > div {
+    flex:1;
+    height:100px;
+    padding:5px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    background:#fff;
+    &:nth-child(2){
+      margin-left:10px;
+    }
+    p{
+      margin-bottom:0;
+    }
+    div{
+      margin-right:10px;
+    }
+  }
+}
+// 轮播图
+.carousel{
+  width:100%;
+  div{
+    height:100px;
+    width:100%;
+  }
+  img{
+    width:100%;
+    height:100%;
+  }
+}
+// bookWrapper
+.bookWrapper{
+  padding:10px;
+  background:#fff;
+  margin-top:10px;
+  .bookTitle{
+    font-size:14px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:10px;
+    color:#969696;
+  }
+  .bookDetail{
+    display: flex;
+    flex-wrap:wrap;
+    div{
+      width:33.333333%;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom:6px;
+      img{
+        width:80%;
+      }
+    }
+  }
+}
