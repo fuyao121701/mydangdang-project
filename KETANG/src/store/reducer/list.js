@@ -46,8 +46,8 @@ export default function list(state = INIT_STATE, action) {
             } else {
                 let item = state.shopCart.unpay.find(item => parseFloat(item.id) === mode);
                 item.check = !item.check;
-                let f = state.shopCart.unpay.find(item => item.check === true);
-                f ? state.selectAll = true : state.selectAll = false;
+                let f = state.shopCart.unpay.find(item => item.check === false);
+                f ? state.selectAll = false : state.selectAll = true;
             }
             break;
     }

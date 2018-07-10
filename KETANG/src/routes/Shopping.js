@@ -5,7 +5,8 @@ import {Checkbox, Icon,InputNumber} from 'antd'
 import action from '../store/action'
 import '../static/css/shopping.less'
 import List from '../component/List'
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {removeShopCart,payShopCart}  from "../api/course";
 
 let img=require('../static/images/dangdang.png');
 let img1=require('../static/images/img.jpg');
@@ -30,8 +31,10 @@ class Shopping extends Component {
                     <div className='shop_main'>
                         <div className='shop_title'>
                             <div className='shop_input'>
-                                <Checkbox ></Checkbox>
+                                {/*<Checkbox onChange={this.props.handleSelect.bind(this,"all")} checked={this.props.selectAll}></Checkbox>*/}
+                                <Checkbox checked={this.props.selectAll} onChange={this.props.handleSelect.bind(this,"all")}/>
                                 <div className='shopIcon'>
+
                                     <em></em>
                                     <span>当当网</span></div>
                             </div>
@@ -41,27 +44,57 @@ class Shopping extends Component {
                             </div>
                         </div>
                         <ul className='shop_ul'>
-                            <li className='shop_li'>
-                                <Checkbox></Checkbox>
-                                <Link to='/details'>
-                                    <img src={img1} alt="" style={{display: 'inline-block'}} className='shop_img'/>
-                                    {
-                                        !this.state.compile?(<div className='shop_price'>
-                                            <p>生活需要仪式感（你可以活得更高级，把温暖和感动带给你在乎的人）</p>
-                                            <span>￥25.98</span>
-                                            <span style={{textDecoration: 'line-through'}}
-                                                  className='shop_pic'>￥36.00</span>
-                                            <div><span>X1</span><Icon type="edit" onClick={this.handleBit} style={{fontSize:'.4rem'}}/></div>
-                                        </div>):(<div style={{width:'100%'}}>
-                                            <div style={{float:'left'}}>
-                                                <InputNumber size="large" min={1} defaultValue={1} style={{width:'2.5rem'}}/>
-                                                <div><Icon type="delete" style={{fontSize:'.43rem',float:'right',marginTop:'.5rem'}}/></div>
-                                            </div>
-                                            <div style={{float:'right',backgroundColor:'#f0f0f0',padding:'1rem .35rem',fontSize:'.3rem'}} onClick={()=>{this.setState({compile:false})}}>完成</div>
-                                        </div>)
-                                    }
-                                </Link>
-                            </li>
+                            {
+                                this.props.shopCart.unpay.map((item,index)=>{
+                                    let {pic,name,price,pricing,id,pcs,check} = item;
+                                    return   <li className='shop_li' key={index}>
+                                        <Checkbox onChange={this.props.handleSelect.bind(this,id)} checked={check}></Checkbox>
+                                        <Link to={{
+                                            pathname: `/shopping/details`,
+                                            search: `?courseId=${id}`
+                                        }}>
+                                            <img src={pic} alt=""
+                                                 style={{display: 'inline-block',width:'2rem',height:'2rem'}}
+                                                 className='shop_img'/>
+                                        </Link>
+                                        {
+                                            !this.state.compile?(<div className='shop_price'>
+                                                <Link to={{
+                                                    pathname: `/shopping/details`,
+                                                    search: `?courseId=${id}`
+                                                }}>
+                                                    <p>{name}</p>
+                                                </Link>
+                                                <span style={{color: '#ff2832'}}>{price}</span>
+                                                <span
+                                                    style={{textDecoration: 'line-through',color: '#b8b8b8'}}
+                                                    className='shop_pic'>{pricing}</span>
+                                                <div style={{marginBottom:'.2rem'}}>
+                                                    <span>X{pcs}</span>
+                                                    <Icon type="edit"
+                                                          onClick={this.handleBit}
+                                                          style={{fontSize:'.4rem'}}/></div>
+                                            </div>)
+                                                :(<div style={{width:'100%'}}>
+                                                <div style={{float:'left',marginTop:'.4rem'}}>
+                                                    <InputNumber
+                                                        size="large" min={1}
+                                                        defaultValue={1}
+                                                        style={{width:'2.5rem'}}/>
+                                                    <div><Icon
+                                                        type="delete"
+                                                        style={{fontSize:'.43rem',float:'right',marginTop:'.5rem'}}/></div>
+                                                </div>
+                                                <div
+                                                    style={{float:'right',backgroundColor:'#f0f0f0',padding:'1rem .35rem',fontSize:'.3rem'}} onClick={()=>{this.setState({compile:false})}}
+                                                >完成</div>
+                                            </div>)
+                                        }
+                                    </li>
+
+                                })
+                            }
+
                         </ul>
                     </div>
                     <div className='shop_centre'>
@@ -72,6 +105,10 @@ class Shopping extends Component {
                 </main>
             </div>
         )
+    }
+    handleRemove = () =>{
+
+
     }
 }
 export default connect(state => ({...state.list}), action.list)(Shopping)

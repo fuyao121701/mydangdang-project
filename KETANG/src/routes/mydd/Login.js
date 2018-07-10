@@ -26,7 +26,7 @@ class  Login extends React.Component {
 
                 <WrappedNormalLoginForm/>
 
-                <div className="safe">
+                <div className="safe" style={{margin:"0 .4rem"}}>
                     <span> 为保障账户安全，请您不要设置与邮箱密码相同的账户登录密码或支付密码，<a href="">谨防诈骗!</a>  </span>
                 </div>
                 <div className="pay">
@@ -53,7 +53,7 @@ class  Login extends React.Component {
                     </ul>
                 </div>
                 <div className="support">
-                    <ul>
+                    <ul style={{marginLeft:".4rem"}}>
                         <li>
                             <Icon type="check-circle-o" />
                             7天无理由退货
