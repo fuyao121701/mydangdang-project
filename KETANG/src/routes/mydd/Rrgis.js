@@ -126,23 +126,23 @@ class DynamicFieldSet extends React.Component {
                     {getFieldDecorator('userName', {
                         rules: [{ required: true, message: '请输入用户名!' }],
                     })(
-                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)', fontSize:".4rem",marginLeft:"-.1rem",marginTop:"-2rem" }} />} placeholder="手机号/邮箱/昵称" />
+                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)', position:"absolute",top:"-.1rem",marginBottom:0,}} />} placeholder="手机号/邮箱/昵称" />
                     )}
                 </FormItem>
                 <FormItem>
                     {getFieldDecorator('password', {
                         rules: [{ required: true, message: '请输入密码!' }],
                     })(
-                        <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" />
+                        <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)',position:"absolute",top:"-.1rem" }} />} type="password" placeholder="密码" />
                     )}
                 </FormItem>
 
                 {formItems}
                 <FormItem {...formItemLayoutWithOutLabel} >
-                    <Button type=""  htmlType="submit" onClick={uuid !==1?this.add:null}>下一步</Button>
+                    <Button type=""  htmlType="submit" onClick={uuid !==1?this.add:null} style={{marginLeft:0}}>下一步</Button>
                 </FormItem>
                 <div className="safe">
-                    <p style={{textAlign:"center"}}> 注册即表示您同意《<a href="">当当交易条款</a>》和《 <a href="">当当社区条款</a>》 </p>
+                    <p style={{marginLeft:"20px",marginTop:"-20px"}}> 注册即表示您同意《<a href="">当当交易条款</a>》和《 <a href="">当当社区条款</a>》 </p>
                 </div>
                 <div className="support">
                     <ul>

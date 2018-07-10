@@ -40,8 +40,8 @@ class Classify extends React.Component {
             <div className="headerNavBox">
                 <div className="classWrapper">
                     <Icon type="left" style={{"marginLeft":"10px"}} className="icon" onClick={this.back}/>
-                     <Input  placeholder="搜索商品/店铺/种类" prefix={<Icon type='search'/>}  className='inputBox' />
-                    <Icon type="ellipsis" className="icon"/>
+                     <Input  placeholder="搜索商品/店铺/种类" prefix={<Icon type='search'/>}  className='inputBox' style={{width:"70%",marginLeft:".6rem"}}  />
+                    <Icon type="ellipsis" className="icon" style={{position:"fixed",right:".3rem"}}/>
                 </div>
             </div>
             <main className='allBox mainContent'>
