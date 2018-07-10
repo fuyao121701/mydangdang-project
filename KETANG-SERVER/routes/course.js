@@ -48,7 +48,7 @@ route.get('/listname', (req, res) => {
     res.send({
         code: 0,
         msg: 'OK!',
-        data: req.swiperDATA
+        data: req.listnameDATA
     });
 });
 route.get('/info', (req, res) => {

@@ -26,9 +26,6 @@ import Classify from "./routes/Classify";
 import Mydd from "./routes/Mydd"
 
 import Shopping_one from "./routes/Shopping_one";
-import Mydangdang from "./routes/Mydangdang";
-import Login from "./routes/Login";
-import Register from './routes/Register'
 
 
 
@@ -40,17 +37,8 @@ render(<Provider store={store}>
                 <Switch>
                     <Route path='/home' component={Home}/>
                     <Route path='/classify' component={Classify}/>
-                  
                     <Route path='/mydangdang'  component={Mydd}/>
-                   
-
                     <Route path='/shopping' component={Shopping_one}/>
-                    <Route path='/mydangdang' component={Mydangdang}/>
-                    <Route path='/register' component={Register}/>
-                    <Route path='/login' component={Login}/>
-                   {/* <Route path='/details' component={Details}/>
-                    <Route path='/details/:id' component={Details}/>*/}
-
                     <Redirect to='/home'/>
                 </Switch>
                 <NavBottom/>

@@ -33,12 +33,6 @@ let course = {
             dispatch({type:TYPES.COURSE_UNPAY,result})
         }
     },
-    queryPay(){
-        return async dispatch=>{
-            let result=await queryShopCart(1);
-            dispatch({type:TYPES.COURSE_PAY,result})
-        }
-    },
     handleSelect(mode){
         //mode:all全选/全不选 id:
         return {
