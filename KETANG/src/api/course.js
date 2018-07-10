@@ -43,7 +43,10 @@ export function queryShopCart(state = 0) {
         }
     });
 }
-
+//=>获取分类页左侧列表
+export function queryListName(payload) {
+    return axios.get('/course/listname')
+}
 //=>支付
 export function payShopCart(storeID) {
     return axios.post('/store/pay', {
