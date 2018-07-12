@@ -17,9 +17,6 @@ class Shopping extends Component {
             money:0.00,
         }
     }
-    componentDidMount(){
-
-    }
     handleBit=()=>{
         if (this.state.compile) return;
         this.setState({compile:true})

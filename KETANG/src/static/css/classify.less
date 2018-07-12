@@ -28,7 +28,7 @@
     }
   }
 }
-.mainContent{
+.allBox.mainContent{
   width: 7.5rem;
   position:fixed;
   .ant-tabs-nav-wrap{
@@ -117,6 +117,33 @@
       margin-bottom:6px;
       img{
         width:80%;
+      }
+    }
+  }
+  .titleDetail{
+    font-size:12px;
+    div{
+      border-right:1px solid #e4e2e2;
+      margin-top:10px;
+      &:nth-child(3n+3){
+        border:none
+      }
+      &:last-child{
+        color:#bababa
+      }
+    }
+  }
+  .titleDetailColumn{
+    flex-direction: column;
+    font-size:12px;
+    div{
+      width:100%;
+      padding: 5px;
+      justify-content: center;
+      align-items: stretch;
+      border-bottom:1px solid #e4e2e2;
+      &:last-child{
+        border:none;
       }
     }
   }

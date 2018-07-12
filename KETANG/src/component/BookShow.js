@@ -30,7 +30,7 @@ class BookShow extends React.Component{
                                     }} style={{"textAlign":"center"}}>
                                         <img src={item.pic} alt="" style={{"height":"100px"}}/>
                                     </NavLink>
-                                    <span>{item.name.slice(0,3)}</span>
+                                    <span>{item.crunchies}</span>
 
                                 </div>
                         ))

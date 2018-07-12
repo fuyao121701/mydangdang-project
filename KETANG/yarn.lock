@@ -6169,7 +6169,7 @@ react-dev-utils@^5.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^16.4.1:
+react-dom@^16.2.0, react-dom@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
   dependencies:
@@ -6253,6 +6253,14 @@ react-swipe@^5.1.1:
     prop-types "^15.6.0"
     swipe-js-iso "^2.0.4"
 
+react-swipes@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/react-swipes/download/react-swipes-1.1.0.tgz#667e9de652fd4b6b993502a800c67d554300943c"
+  dependencies:
+    prop-types "^15.6.1"
+    react "^16.2.0"
+    react-dom "^16.2.0"
+
 react-transition-group@^2.2.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.4.0.tgz#1d9391fabfd82e016f26fabd1eec329dbd922b5a"
@@ -6262,7 +6270,7 @@ react-transition-group@^2.2.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.4.1:
+react@^16.2.0, react@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
   dependencies:
