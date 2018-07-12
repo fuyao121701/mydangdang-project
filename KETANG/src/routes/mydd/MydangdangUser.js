@@ -8,7 +8,7 @@ import {Icon} from 'antd';
 import Mydd_child  from "../mydd/Mydd_child";
 import "../../static/css/mydangdang.less";
 import action from "../../store/action";
-import {exitLogin} from "../../api/person";
+import {exitLogin,queryInfo} from "../../api/person";
 
 import {route} from "react-router-dom";
 let img = require("../../static/images/user.png");
@@ -19,19 +19,28 @@ class Mydangdang extends Component{
         this.state={
             title:'我的当当',
             img1:"http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png",
-            name1:"会员中心"
+            name1:"会员中心",
+            baseInfo:{}
         }
     }
-    componentWillMount() {
-        let {baseInfo,queryBaseInfo} = this.props;
-        console.log(!baseInfo);
-        !baseInfo?queryBaseInfo():null;
+    // componentWillMount() {
+    //     let {baseInfo,queryBaseInfo} = this.props;
+    //     // console.log(!baseInfo);
+    //     !baseInfo?queryBaseInfo():null;
+    // }
+    async componentDidMount(){
+        let result = await queryInfo();
+        if(parseFloat(result.code)==0){
+            this.setState({
+                baseInfo:result.data
+            })
+        }
     }
     render(){
 
-        let {baseInfo}=this.props;
-        if(!baseInfo){return ''}
-        let {name}=baseInfo;
+        let {name}=this.state.baseInfo;
+        if(!this.state.baseInfo){return ''}
+        // let {name}=baseInfo;
         return (
 
             <div>
@@ -70,7 +79,7 @@ class Mydangdang extends Component{
                                 <div>
                                     <p><Icon type="reload" onClick={async ev => {
                                         await exitLogin();
-                                        this.props.history.push('/mydangdang')
+                                        this.props.history.push('/mydangdang/mydangdangUser')
                                     }}/></p>
                                     <span>退出当前账户</span>
                                 </div>

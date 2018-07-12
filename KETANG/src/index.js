@@ -20,14 +20,10 @@ import NavBottom from './component/NavBottom'
 import Home from "./routes/Home";
 import Classify from "./routes/Classify";
 
-// import Mydangdang from "./routes/Mydangdang";
-// import Register from './routes/Register'
 
 import Mydd from "./routes/Mydd"
 
 import Shopping_one from "./routes/Shopping_one";
-
-
 
 /*RENDER*/
 render(<Provider store={store}>
@@ -37,8 +33,12 @@ render(<Provider store={store}>
                 <Switch>
                     <Route path='/home' component={Home}/>
                     <Route path='/classify' component={Classify}/>
-                    <Route path='/mydangdang'  component={Mydd}/>
+
+                    <Route path='/mydangdang' component={Mydd}/>
+
+
                     <Route path='/shopping' component={Shopping_one}/>
+
                     <Redirect to='/home'/>
                 </Switch>
                 <NavBottom/>

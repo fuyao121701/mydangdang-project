@@ -12,22 +12,29 @@ class Person extends React.Component{
     constructor(props,context){
         super(props,context);
         this.state={
-            isLogin:false
+            isLogin:false,
+            h:false,
         }
     }
     //验证是否登录
     async componentWillMount(){
+        console.log(3);
         let result=await checkLogin(),
             isLogin=parseFloat(result.code)===0?true:false;
+        console.log(isLogin);
         this.setState({isLogin})
     }
-   路由切换重新验证是否登录
-    async componentWillReceiveProps(){
-        let result=await checkLogin(),
-            isLogin=parseFloat(result.code)===0?true:false;
-        this.setState({isLogin})
+   //路由切换重新验证是否登录
+
+    async componentWillReceiveProps() {
+        console.log(2);
+        let result = await checkLogin(),
+            isLogin = parseFloat(result.code) === 0 ? true : false;
+        console.log(isLogin);
+        this.setState({isLogin,h:!this.state.h});
     }
     render(){
+        console.log(1);
         return <section>
             <Switch>
                 <Route path="/mydangdang/mydangdangUser" render={()=>{

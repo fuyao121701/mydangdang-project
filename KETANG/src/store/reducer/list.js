@@ -42,13 +42,9 @@ export default function list(state = INIT_STATE, action) {
                     return {...item, check: state.selectAll};
                 });
             } else {
-                let item = state.shopCart.unpay.find(item => {
-                    return parseFloat(item.id) === mode;
-                });
+                let item = state.shopCart.unpay.find(item => parseFloat(item.id) === mode);
                 item.check = !item.check;
-                let f = state.shopCart.unpay.find(item => {
-                    return item.check === false;
-                });
+                let f = state.shopCart.unpay.find(item => item.check === false);
                 f ? state.selectAll = false : state.selectAll = true;
             }
             break;
