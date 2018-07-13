@@ -20,8 +20,8 @@ class TitleListShow extends React.Component{
                     <span>{this.props.subTitle ? this.props.subTitle + " >" : ""}</span>
                 </div>
                 <div className={this.props.subTitle ? "bookDetail titleDetail" : "bookDetail titleDetailColumn"} >
-                    {this.props.titleList.map(item=>(
-                        <div>{item}</div>
+                    {this.props.titleList.map((item,index)=>(
+                        <div key={index}>{item}</div>
                     ))}
                 </div>
             </div>
